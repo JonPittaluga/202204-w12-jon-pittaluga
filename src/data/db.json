@@ -1,0 +1,80 @@
+{
+  "characters": [
+    {
+      "id": 1,
+      "name": "Joffrey",
+      "family": "Baratheon",
+      "image": "../../img/joffrey.jpg",
+      "age": 17,
+      "message": "You are all going to die",
+      "emoji": "👑",
+      "isAlive": true,
+      "role": "king",
+      "yearsOfReign": 2
+    },
+    {
+      "id": 2,
+      "name": "Jaimie",
+      "family": "Lannister",
+      "image": "../../img/jaime.jpg",
+      "age": 46,
+      "message": "Strike first,  then ask",
+      "emoji": "🗡",
+      "isAlive": true,
+      "role": "fighter",
+      "dexterity": 10,
+      "weapon": "Sword"
+    },
+    {
+      "id": 3,
+      "name": "Daenerys",
+      "family": "Targaryen",
+      "image": "../../img/daenerys.jpg",
+      "age": 21,
+      "message": "Strike first,  then ask",
+      "emoji": "🗡",
+      "isAlive": true,
+      "role": "fighter",
+      "dexterity": 10,
+      "weapon": "Dragon"
+    },
+    {
+      "id": 4,
+      "name": "Tyrion",
+      "family": "Lannister",
+      "age": 40,
+      "message": "I don't know why, but I think I'm going to die soon.",
+      "emoji": "🎓",
+      "isAlive": true,
+      "image": "../../img/tyrion.jpg",
+      "role": "advisor",
+      "counseled": "Danaerys Targaryen"
+    },
+    {
+      "id": 5,
+      "name": "Bronn",
+      "family": "Stokeworth",
+      "image": "../../img/bronn.jpg",
+      "age": 47,
+      "message": "I'm a loser",
+      "emoji": "🛡",
+      "isAlive": true,
+      "role": "squire",
+      "knight": "Jaimie Lannister",
+      "brownNose": 3
+    },
+    {
+      "id": 6,
+      "name": "Arya",
+      "family": "Stark",
+      "image": "../../img/arya.jpeg",
+      "age": 12,
+      "message": "Strike first,  then ask",
+      "emoji": "🗡",
+      "isAlive": true,
+      "role": "fighter",
+      "dexterity": 10,
+      "weapon": "needle"
+    }
+  ]
+}
