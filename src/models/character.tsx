@@ -13,12 +13,14 @@ export interface iCharacter {
   isAlive: boolean;
   // based on every role
   role: eRole;
-  dexterity?: number;
-  weapon?: string;
-  yearsOfReign?: number;
-  knight?: string;
-  brownNose?: number;
-  counselOf?: string;
+  metadata: {
+    dexterity?: number;
+    weapon?: string;
+    yearsOfReign?: number;
+    knight?: string;
+    brownNose?: number;
+    counselOf?: string;
+  };
 }
 
 export type eRole = 'fighter' | 'king' | 'advisor' | 'squire';

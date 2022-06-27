@@ -11,7 +11,9 @@ export const dataStatic: Array<iCharacter> = [
     emoji: '👑',
     isAlive: true,
     role: 'king',
-    yearsOfReign: 2,
+    metadata: {
+      yearsOfReign: 2,
+    },
   },
   {
     id: 2,
@@ -23,8 +25,10 @@ export const dataStatic: Array<iCharacter> = [
     emoji: '🗡',
     isAlive: true,
     role: 'fighter',
-    dexterity: 10,
-    weapon: 'Sword',
+    metadata: {
+      dexterity: 10,
+      weapon: 'Sword',
+    },
   },
   {
     id: 3,
@@ -36,8 +40,10 @@ export const dataStatic: Array<iCharacter> = [
     emoji: '🗡',
     isAlive: true,
     role: 'fighter',
-    dexterity: 10,
-    weapon: 'Dragon',
+    metadata: {
+      dexterity: 10,
+      weapon: 'Dragon',
+    },
   },
   {
     id: 4,
@@ -49,7 +55,9 @@ export const dataStatic: Array<iCharacter> = [
     isAlive: true,
     image: '../../img/tyrion.jpg',
     role: 'advisor',
-    counselOf: 'Danaerys Targaryen',
+    metadata: {
+      counselOf: 'Danaerys Targaryen',
+    },
   },
   {
     id: 5,
@@ -61,8 +69,10 @@ export const dataStatic: Array<iCharacter> = [
     emoji: '🛡',
     isAlive: true,
     role: 'squire',
-    knight: 'Jaimie Lannister',
-    brownNose: 3,
+    metadata: {
+      knight: 'Jaimie Lannister',
+      brownNose: 3,
+    },
   },
   {
     id: 6,
@@ -74,7 +84,9 @@ export const dataStatic: Array<iCharacter> = [
     emoji: '🗡',
     isAlive: true,
     role: 'fighter',
-    dexterity: 10,
-    weapon: 'needle',
+    metadata: {
+      dexterity: 10,
+      weapon: 'needle',
+    },
   },
 ];
