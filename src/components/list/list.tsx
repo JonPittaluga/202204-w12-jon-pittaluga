@@ -1,7 +1,9 @@
-import { iCharacter } from '../../models/character';
+import { useContext } from 'react';
+import { CharactersContext } from '../../context/context-context';
 import { Card } from '../card/card';
 
-export function List({ characters }: { characters: Array<iCharacter> }) {
+export function List() {
+  const { characters } = useContext(CharactersContext);
   return (
     <>
       <ul className="characters-list row list-unstyled">

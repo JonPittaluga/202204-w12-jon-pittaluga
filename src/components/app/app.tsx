@@ -1,18 +1,15 @@
-import { useState } from 'react';
-import { iCharacter } from '../../models/character';
 import { List } from '../list/list';
-import { dataStatic } from '../../data/data-static';
+import { Communications } from '../communications/communications';
+import { ContextProvider } from '../../context/context-provider';
 
 function App() {
-  const initialState: Array<iCharacter> = dataStatic;
-  //   const [listState, setList] = useState(initialState);
-
   return (
-    <>
+    <ContextProvider>
       <div className="container">
-        <List characters={initialState}></List>
+        <List></List>
       </div>
-    </>
+      <Communications />
+    </ContextProvider>
   );
 }
 

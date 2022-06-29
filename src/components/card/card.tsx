@@ -1,7 +1,28 @@
 import { iCharacter } from '../../models/character';
+import { StatusBtn } from './card-status/status';
+import { ActionBtn } from './card-actionBtn/actionBtn';
+import { CardOverlay } from './card-overlay/card-overlay';
+import { CardInfo } from './card-info/card-info';
+import { CardName } from './card-name/card-name';
+import { CardImage } from './card-image/card-image';
+
+import { useContext } from 'react';
+import { CharactersContext } from '../../context/context-context';
 
 export function Card({ character }: { character: iCharacter }) {
+  const { killCharacter, speakCharacter } = useContext(CharactersContext);
+
+  // Método para eliminar personaje con kill, recibiendo ID.
+  const handleKill = () => {
+    killCharacter(character.id as number);
+  };
+
+  const handleSpeak = () => {
+    speakCharacter(character.id as number);
+  };
+
   const getMetadata = () => {
+    // Fixme: Object.keys me devuelve un array de strings con las propiedades del objeto
     if (character.role === 'fighter') {
       return (
         <>
@@ -25,52 +46,16 @@ export function Card({ character }: { character: iCharacter }) {
     <>
       <li className="character col" key={character.id}>
         <div className="card character__card">
-          <img
-            src={character.image}
-            alt={character.name}
-            className="character__picture card-img-top"
-          />
+          <CardImage character={character} />
           <div className="card-body">
-            <h2 className="character__name card-title h4">
-              {character.name} {character.family}
-            </h2>
-            <div className="character__info">
-              <ul className="list-unstyled">
-                <li>Age: {character.age} years old</li>
-                <li className="emoji">{character.emoji}</li>
-                <li>
-                  Status:{' '}
-                  {character.isAlive ? (
-                    <i
-                      className="fas fa-thumbs-up"
-                      data-id="{character.id}-status"
-                    ></i>
-                  ) : (
-                    <i
-                      className="fas fa-thumbs-down"
-                      data-id="{character.id}-status"
-                    ></i>
-                  )}
-                </li>
-              </ul>
-            </div>
-            <div className="character__overlay">
-              <ul className="list-unstyled">{getMetadata()}</ul>
-              <div className="character__actions">
-                <button
-                  className="character__action btn speak"
-                  id="{character.id}-speak"
-                >
-                  speak
-                </button>
-                <button
-                  className="character__action btn kill"
-                  id={`${character.id}-kill`}
-                >
-                  die
-                </button>
-              </div>
-            </div>
+            <CardName character={character} />
+            <CardInfo character={character}>
+              <StatusBtn isAlive={character.isAlive} />
+            </CardInfo>
+            <CardOverlay getMetadata={getMetadata}>
+              <ActionBtn text="speak" id={character.id} action={handleSpeak} />
+              <ActionBtn action={handleKill} text="kill" id={character.id} />
+            </CardOverlay>
           </div>
           <i className="emoji"></i>
         </div>
