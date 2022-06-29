@@ -12,7 +12,7 @@ export const dataStatic: Array<iCharacter> = [
     isAlive: true,
     role: 'king',
     metadata: {
-      yearsOfReign: 2,
+      'Years of reign': 2,
     },
   },
   {
@@ -26,8 +26,8 @@ export const dataStatic: Array<iCharacter> = [
     isAlive: true,
     role: 'fighter',
     metadata: {
-      dexterity: 10,
-      weapon: 'Sword',
+      Dexterity: 10,
+      Weapon: 'Sword',
     },
   },
   {
@@ -41,8 +41,8 @@ export const dataStatic: Array<iCharacter> = [
     isAlive: true,
     role: 'fighter',
     metadata: {
-      dexterity: 10,
-      weapon: 'Dragon',
+      Dexterity: 10,
+      Weapon: 'Dragon',
     },
   },
   {
@@ -56,7 +56,7 @@ export const dataStatic: Array<iCharacter> = [
     image: '../../img/tyrion.jpg',
     role: 'advisor',
     metadata: {
-      counselOf: 'Danaerys Targaryen',
+      'Counseler of': 'Danaerys Targaryen',
     },
   },
   {
@@ -70,8 +70,8 @@ export const dataStatic: Array<iCharacter> = [
     isAlive: true,
     role: 'squire',
     metadata: {
-      knight: 'Jaimie Lannister',
-      brownNose: 3,
+      Knight: 'Jaimie Lannister',
+      'Brown nose level': 3,
     },
   },
   {
@@ -85,8 +85,8 @@ export const dataStatic: Array<iCharacter> = [
     isAlive: true,
     role: 'fighter',
     metadata: {
-      dexterity: 10,
-      weapon: 'needle',
+      Dexterity: 10,
+      Weapon: 'needle',
     },
   },
 ];

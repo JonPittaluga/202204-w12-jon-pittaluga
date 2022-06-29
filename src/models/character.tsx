@@ -1,5 +1,3 @@
-import { type } from 'os';
-
 export interface iCharacter {
   // basic info
   id?: number;
@@ -14,12 +12,12 @@ export interface iCharacter {
   // based on every role
   role: eRole;
   metadata: {
-    dexterity?: number;
-    weapon?: string;
-    yearsOfReign?: number;
-    knight?: string;
-    brownNose?: number;
-    counselOf?: string;
+    Dexterity?: number;
+    Weapon?: string;
+    'Years of reign'?: number;
+    Knight?: string;
+    'Brown nose level'?: number;
+    'Counseler of'?: string;
   };
 }
 
