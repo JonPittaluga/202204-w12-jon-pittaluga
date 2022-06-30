@@ -65,7 +65,7 @@ export function Card({ character }: { character: iCharacter }) {
               <StatusBtn isAlive={character.isAlive} />
             </CardInfo>
             <CardOverlay getMetadata={getMetadata}>
-              <ActionBtn text="speak" id={character.id} action={handleSpeak} />
+              <ActionBtn action={handleSpeak} text="speak" id={character.id} />
               <ActionBtn action={handleKill} text="kill" id={character.id} />
             </CardOverlay>
           </div>

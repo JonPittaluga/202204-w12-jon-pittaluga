@@ -2,22 +2,57 @@ import { useContext } from 'react';
 import { CharactersContext } from '../../context/context-context';
 
 export function Communications() {
-  const { characters, speaker, speakCharacter } = useContext(CharactersContext);
-  speakCharacter(speaker);
+  const { speakersData, showMessageData } = useContext(CharactersContext);
 
-  if (speaker !== 0) {
+  let speaker = speakersData[speakersData.length - 1];
+
+  // const handleChange = () => (showMessageData ? ' on' : '');
+
+  if (speaker) {
     return (
-      <div className="comunications on">
-        <p className="comunications__text display-1">
-          {characters[speaker].message}
-        </p>
+      <div
+        className="comunications on"
+        // onChange={handleChange}
+      >
+        <p className="comunications__text display-1">{speaker.message}</p>
         <img
           className="comunications__picture"
-          src={characters[speaker].image}
-          alt={characters[speaker].name + ' ' + characters[speaker].family}
+          src={speaker.image}
+          alt={speaker.name + ' ' + speaker.family}
         />
       </div>
     );
   }
   return <div className="communications"></div>;
 }
+
+/* 
+
+import { useContext } from 'react';
+import { CharactersContext } from '../../context/context-context';
+
+export function Communications() {
+  const { speakersData, showMessageData } = useContext(CharactersContext);
+
+  let speaker = speakersData[speakersData.length - 1];
+
+  const toggleClass = showMessageData ? ' on' : '';
+
+  if (speaker) {
+    return (
+      <div className={`communications on ${toggleClass}`}>
+        <p className="comunications__text display-1">{speaker.message}</p>
+        <img
+          className="comunications__picture"
+          src={speaker.image}
+          alt={speaker.name + ' ' + speaker.family}
+        />
+      </div>
+    );
+  }
+  return <div className={toggleClass}></div>;
+}
+
+
+
+*/

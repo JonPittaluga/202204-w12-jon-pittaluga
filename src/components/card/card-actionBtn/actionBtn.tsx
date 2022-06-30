@@ -9,14 +9,6 @@ export function ActionBtn({
 }) {
   const classNames: string = 'character__action btn';
 
-  // const speak = () => {
-  //   document.querySelector('.communications')?.classList.add('on');
-  //   console.log('speak ' + id);
-  // };
-  // const kill = () => {
-  //   console.log('kill ' + id);
-  // };
-
   return (
     <>
       <button

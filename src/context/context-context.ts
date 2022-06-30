@@ -3,14 +3,16 @@ import { iCharacter } from '../models/character';
 
 const initialContext: {
   characters: Array<iCharacter>;
-  speaker: number;
+  speakersData: Array<iCharacter>;
   killCharacter(id: number): void;
   speakCharacter(id: number): void;
+  showMessageData: boolean;
 } = {
   characters: [],
-  speaker: 0,
+  speakersData: [],
   killCharacter: (id) => {},
   speakCharacter: (id) => {},
+  showMessageData: false,
 };
 
 export const CharactersContext = createContext(initialContext);

@@ -8,13 +8,27 @@ import { dataStatic } from './../data/data-static';
 export function useCharacters() {
   // Model
   const initialState: Array<iCharacter> = dataStatic;
-  const speaker: number = 0;
+  // const speaker: iCharacter = {
+  //   id: 0,
+  //   name: '',
+  //   family: '',
+  //   age: 0,
+  //   image: '',
+  //   emoji: '',
+  //   message: '',
+  //   role: 'fighter',
+  //   isAlive: false,
+  //   metadata: {},
+  // };
+  const speakers: Array<iCharacter> = [];
+  const showMessage: boolean = false;
   const [characters, setCharacters] = useState(initialState);
-  const [speakerId, setSpeaker] = useState(speaker);
+  const [speakersData, setSpeaker] = useState(speakers);
+  const [showMessageData, setShowMessage] = useState(showMessage);
 
   useEffect(() => {
     setCharacters(initialState);
-    // FIXME: This should include a call to an api. Otherwise is stupid
+    // FIXME: This should include a call to an api. Otherwise is stupid. The code below is an example of Alejandro's code.
     // api.getAllTasks().then((data) => {
     //   setTasks(data);
     //   setLoading(false);
@@ -37,14 +51,19 @@ export function useCharacters() {
   };
 
   const speakCharacter = (id: number) => {
-    setSpeaker(id);
-    console.log(id + ' is speaking');
+    const speaker = characters.find((character) => character.id === id);
+    setSpeaker([...speakersData, speaker as iCharacter]);
+    setShowMessage(true);
+    setInterval(() => {
+      setShowMessage(false);
+    }, 2500);
   };
 
   return {
     characters,
-    speaker,
+    speakersData,
     killCharacter,
     speakCharacter,
+    showMessageData,
   };
 }
